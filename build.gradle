@@ -1,0 +1,19 @@
+apply plugin: 'flyway'
+apply plugin: 'java'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'mysql:mysql-connector-java:5.1.16'
+        classpath "com.googlecode.flyway:flyway-gradle-plugin:2.3"
+    }
+}
+
+flyway {
+    url = 'jdbc:mysql://localhost:3306/warnabroda'
+    user = 'root'
+    password = ''
+    schemas = ['warnabroda']
+}
